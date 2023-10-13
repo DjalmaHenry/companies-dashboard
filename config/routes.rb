@@ -1,8 +1,10 @@
 Rails.application.routes.draw do
-  root to: "sessions#new"
-  get 'login', to: 'sessions#new', as: 'login'
+  root 'companies#index'
   
-  devise_for :users, controllers: { sessions: 'sessions' }
+  devise_for :users
+
+  resources :companies
+
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
 
   # Defines the root path route ("/")
