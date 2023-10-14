@@ -72,13 +72,20 @@
         <span id="closeEquipmentModalBtn" class="closeBtn">&times;</span>
         <%= semantic_form_for [@company, Equipment.new], url: company_equipments_path(@company) do |f| %>
             <%= f.inputs do %>
-                <%= f.input :name, label: "Nome" %>
-                <%= f.input :serial_number, label: "Serial" %>
-                <%= f.input :acquisition_date, as: :date_picker, input_html: { class: "date-picker-input" }, label: "Data de aquisição" %>
-                <%= f.input :responsible_user, label: "Pessoa responsável" %>                
+              <%= f.input :name, label: "Nome" %>
+              <span id="equipment-name-error" class="error-message"></span>
+              
+              <%= f.input :serial_number, label: "Serial" %>
+              <span id="equipment-serial-error" class="error-message"></span>
+              
+              <%= f.input :acquisition_date, as: :date_picker, input_html: { class: "date-picker-input" }, label: "Data de aquisição" %>
+              <span id="equipment-date-error" class="error-message"></span>
+              
+              <%= f.input :responsible_user, label: "Pessoa responsável" %>
+              <span id="equipment-responsible-error" class="error-message"></span>                             
             <% end %>
             <%= f.actions do %>
-              <%= f.action :submit, as: :button, label: "Create Equipment" %>
+              <%= f.action :submit, as: :button, label: "Adicionar Equipamento" %>
             <% end %>
         <% end %>
       </div>

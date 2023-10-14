@@ -77,7 +77,7 @@
 .input {
   width: 100%;
   padding: 12px 0 12px 5px;
-  margin-bottom: 20px;
+  margin-bottom: 5px;
   border: 1px solid #ddd;
   border-radius: 4px;
   font-size: 16px;
@@ -90,6 +90,12 @@
   border-color: #007BFF;
   outline: none;
   box-shadow: 0 0 0 3px rgba(0, 123, 255, 0.25);
+}
+
+.error-message {
+  color: red;
+  display: none; /* Esconde por padrão */
+  font-size: 0.9em;
 }
 
 .submit-btn {
@@ -372,7 +378,7 @@ form.formtastic fieldset.actions:before {
 }
 
 form.formtastic .input {
-  margin-bottom: 20px;
+  margin-top: 20px;
 }
 
 form.formtastic label {
@@ -425,6 +431,7 @@ form.formtastic ol {
   width: auto;
   border: none;
   border-radius: 5px;
+  margin-top: 20px;
   display: inline-block;
   cursor: pointer;
   transition: background-color 0.2s;

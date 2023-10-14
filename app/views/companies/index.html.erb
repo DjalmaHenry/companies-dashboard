@@ -72,7 +72,11 @@
     <%= semantic_form_for @company, html: { multipart: true } do |f| %>
         <%= f.inputs do %>
           <%= f.input :name, label: "Nome" %>
+          <span id="name-error" class="error-message"></span>
+          
           <%= f.input :address, label: "Endereço" %>
+          <span id="address-error" class="error-message"></span>
+                    
           <div class="file-upload-wrapper">
           <label for="company_logo" class="file-upload-label">Escolher Logotipo</label>
           <%= f.input :logo, as: :file, label: false, input_html: { id: "company_logo", class: "file-upload-input", onchange: "window.displayImagePreview(this)" } %>
@@ -81,7 +85,7 @@
         
         <% end %>
         <%= f.actions do %>
-          <%= f.action :submit, as: :button, label: "Create Company" %>
+          <%= f.action :submit, as: :button, label: "Adicionar empresa" %>
         <% end %>
       <% end %>      
   </div>
