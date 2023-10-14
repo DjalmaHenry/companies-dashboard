@@ -9,7 +9,6 @@
   font-family: 'Roboto', sans-serif;
 }
 
-
 .modal {
   display: none;
   position: fixed;
@@ -18,17 +17,22 @@
   top: 0;
   width: 100%;
   height: 100%;
-  overflow: auto;
+  overflow: hidden;
   background-color: rgba(0, 0, 0, 0.5);
 }
 
 .modal-content {
   background-color: #fefefe;
-  margin: 15% auto;
   padding: 20px;
   border: 1px solid #888;
-  width: 70%;
+  width: 50%;
   border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  margin: 0;
 }
 
 .closeBtn {
@@ -36,6 +40,7 @@
   float: right;
   font-size: 28px;
   font-weight: bold;
+  margin-left: 20px;
 }
 
 .closeBtn:hover,
@@ -44,6 +49,7 @@
   text-decoration: none;
   cursor: pointer;
 }
+
 
 .login-container {
   display: flex;
@@ -263,4 +269,62 @@ tr:last-child td:last-child {
 .pagination .disabled {
   color: #ccc;
   border: 1px solid #eee;
+}
+
+/* Remove a borda do fieldset e o contador de tópicos */
+form.formtastic fieldset.inputs,
+form.formtastic fieldset.actions
+ {
+  border: none;
+  padding: 0;
+  margin: 0;
+  position: relative;
+}
+
+form.formtastic fieldset.inputs:before,
+form.formtastic fieldset.actions:before
+ {
+  content: none; /* Isso remove o contador de tópicos */
+}
+
+/* Ajusta os inputs para terem um design mais limpo */
+form.formtastic .input {
+  margin-bottom: 20px; /* Espaçamento entre os campos */
+}
+
+form.formtastic label {
+  display: block;
+  margin-bottom: 5px;
+  font-weight: bold;
+}
+
+form.formtastic input[type="text"],
+form.formtastic input[type="password"],
+form.formtastic input[type="email"],
+form.formtastic textarea,
+form.formtastic select {
+  width: calc(100% - 1rem);
+  padding: 10px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05) inset;
+  font-size: 1rem;
+  transition: border-color 0.3s, box-shadow 0.3s;
+  box-sizing: border-box;
+}
+
+form.formtastic input[type="text"]:focus,
+form.formtastic input[type="password"]:focus,
+form.formtastic input[type="email"]:focus,
+form.formtastic textarea:focus,
+form.formtastic select:focus {
+  border-color: #3498db;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1) inset;
+}
+
+/* Para remover as listas ordenadas que envolvem os campos */
+form.formtastic ol {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
 }
