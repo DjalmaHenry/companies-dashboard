@@ -30,7 +30,6 @@
       <th>Serial Number</th>
       <th>Acquisition Date</th>
       <th>Responsible User</th>
-      <th>Delete</th>
     </tr>
 </thead>
   <tbody>
@@ -41,12 +40,6 @@
       <td><%= equip.serial_number %></td>
       <td><%= equip.acquisition_date %></td>
       <td><%= equip.responsible_user %></td>
-      <td>
-      <%= link_to company_equipment_path(@company, equip), method: :delete, data: { confirm: "Are you sure?" }, class: "delete-equipment", data: { equipment_id: equip.id } do %>
-        <img src="https://i.imgur.com/Nt8iVi4.png5" alt="Delete">
-      <% end %>
-         
-      </td>
     </tr>
   <% end %>
   

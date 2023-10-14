@@ -22,13 +22,4 @@ class EquipmentsController < ApplicationController
   def equipment_params
     params.require(:equipment).permit(:name, :serial_number, :acquisition_date, :responsible_user)
   end
-
-  def destroy
-    @equipment = Equipment.find(params[:id])
-    @equipment.destroy
-    respond_to do |format|
-      format.js
-    end
-  end  
-  
 end
