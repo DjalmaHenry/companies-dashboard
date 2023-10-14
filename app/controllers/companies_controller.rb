@@ -1,6 +1,6 @@
 class CompaniesController < ApplicationController
   before_action :authenticate_user!
-  
+
   def index
     @companies = Company.paginate(page: params[:page], per_page: 10)
     @company = Company.new
@@ -14,7 +14,7 @@ class CompaniesController < ApplicationController
     @company = Company.new(company_params)
 
     if @company.save
-      render json: { success: true, company: @company.as_json(only: [:id, :name, :address]) }
+      redirect_to @company, notice: 'Company was successfully created.'
     else
       render json: { success: false, errors: @company.errors.full_messages }, status: 400
     end

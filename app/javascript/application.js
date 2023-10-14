@@ -79,7 +79,6 @@ window.displayImagePreview = function (input) {
 }
 
 function setupNewUserModal() {
-  console.log("Loading");
   var newUserModal = document.getElementById("newUserModal");
   var newUserModalBtn = document.getElementById("new-user-modal");
   var closeNewUserModalBtn = document.getElementById("closeNewUserModalBtn");
