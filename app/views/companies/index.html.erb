@@ -1,6 +1,8 @@
 <% resource = User.new %>
 <% resource_name = :user %>
 
+<!-- Barra de Navegacao -->
+
 <nav class="navbar">
   <h1>Empresas</h1>
   
@@ -14,8 +16,6 @@
           <button id="logout-button" class="dropdown-link">Sair da Conta</button>
         </div>
       </div>
-    <% else %> 
-      <!-- Se não houver usuário logado, você pode mostrar opções diferentes ou nada -->
     <% end %>
   </div>
 </nav>
@@ -87,6 +87,7 @@
   </div>
 </div>
 
+<!-- Tabela -->
 <table border="1">
   <thead>
     <tr>
@@ -116,6 +117,7 @@
   </tbody>
 </table>
 
+<!-- Paginacao -->
 <%= will_paginate @companies %>
 
 <form id="logout_form" action="<%= destroy_user_session_path %>" method="post" style="display: none;">

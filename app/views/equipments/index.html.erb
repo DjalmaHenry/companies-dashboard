@@ -1,17 +1,65 @@
+<% resource = User.new %>
+<% resource_name = :user %>
+
+<!-- Barra de Navegacao -->
 <nav class="navbar">
   <h1>Equipamentos de <%= @company.name %></h1>
   
   <div class="user-info">
-    <span class="user-email">email_do_usuario@example.com</span>
-    <div class="custom-dropdown">
-    <button class="user-actions">&#9776; Menu</button>
-    <div class="dropdown-content">
-      <button id="new-user-modal" class="dropdown-link">Criar novo usuário</button>
-      <button id="logout-button" class="dropdown-link">Sair da Conta</button>
-    </div>
-  </div>  
+    <% if user_signed_in? %> <!-- Verifica se um usuário está logado -->
+      <span class="user-email"><%= current_user.email %></span>
+      <div class="custom-dropdown">
+        <button class="user-actions">&#9776; Menu</button>
+        <div class="dropdown-content">
+          <button id="new-user-modal" class="dropdown-link">Criar novo usuário</button>
+          <button id="logout-button" class="dropdown-link">Sair da Conta</button>
+        </div>
+      </div>
+    <% end %>
   </div>
 </nav>
+
+<!-- Modal de Criar Novo Usuário -->
+<div id="newUserModal" class="modal">
+  <div class="modal-content">
+    <span id="closeNewUserModalBtn" class="closeBtn">&times;</span>
+
+    <%= form_for(resource, as: resource_name, url: registration_path(resource_name), html: { id: "new_user_form" }) do |f| %>
+      
+      <% if resource.errors.any? %>
+        <div id="error_explanation">
+          <h2><%= pluralize(resource.errors.count, "error") %> prohibited this user from being saved:</h2>
+
+          <ul>
+            <% resource.errors.full_messages.each do |message| %>
+              <li><%= message %></li>
+            <% end %>       
+          </ul>
+        </div>
+      <% end %>
+
+      <div>
+        <%= f.label :email %><br />
+        <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
+      </div>
+    
+      <div>
+        <%= f.label :password %><br />
+        <%= f.password_field :password, autocomplete: "new-password" %>
+      </div>
+    
+      <div>
+        <%= f.label :password_confirmation %><br />
+        <%= f.password_field :password_confirmation, autocomplete: "new-password" %>
+      </div>
+    
+      <div>
+        <%= f.submit "Sign up" %>
+      </div>
+
+    <% end %>
+  </div>
+</div>
 
 <!-- Botão que dispara o modal de equipamentos -->
 <button id="openEquipmentModalBtn">Adicionar novo equipamento</button>
@@ -34,7 +82,7 @@
       </div>
     </div>
     
-
+<!-- Tabela -->
 <table border="1">
 <thead>
     <tr>
@@ -59,4 +107,10 @@
   </tbody>
 </table>
 
+<!-- Paginacao -->
 <%= will_paginate @equipments %>
+
+<form id="logout_form" action="<%= destroy_user_session_path %>" method="post" style="display: none;">
+  <%= hidden_field_tag "_method", "delete" %>
+  <%= hidden_field_tag "authenticity_token", form_authenticity_token.to_s %>
+</form>
