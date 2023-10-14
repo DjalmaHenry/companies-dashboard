@@ -4,6 +4,7 @@ import "controllers"
 document.addEventListener("turbo:load", function () {
   setupCompanyModal();
   setupEquipmentModal();
+  setupDeleteEquipment();
 });
 
 function setupCompanyModal() {
@@ -49,4 +50,30 @@ function setupEquipmentModal() {
     }
   }
 }
+
+function setupDeleteEquipment() {
+  const deleteLinks = document.querySelectorAll(".delete-equipment");
+  
+  deleteLinks.forEach(link => {
+    link.addEventListener("click", function(event) {
+      event.preventDefault();
+      if (confirm("Are you sure?")) {
+        fetch(link.href, {
+          method: 'DELETE',
+          headers: {
+            "X-Requested-With": "XMLHttpRequest",
+            "X-CSRF-Token": document.querySelector("meta[name='csrf-token']").content
+          },
+          credentials: 'same-origin'
+        }).then(response => {
+          if (response.ok) {
+            const equipmentRow = document.querySelector(`#equipment-${link.dataset.equipmentId}`);
+            if (equipmentRow) equipmentRow.remove();
+          }
+        });
+      }
+    });
+  });
+}
+
 
