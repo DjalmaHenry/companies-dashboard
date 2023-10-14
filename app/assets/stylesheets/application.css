@@ -7,7 +7,6 @@
 
 * {
   font-family: 'Roboto', sans-serif;
-  overflow-x: hidden;
 }
 
 .modal {
@@ -162,14 +161,16 @@ h1 {
 }
 
 .user-actions {
-  appearance: none; /* Remove o estilo padrão */
+  appearance: none;
+  /* Remove o estilo padrão */
   -webkit-appearance: none;
   -moz-appearance: none;
   background-color: #444;
   color: #fff;
   border: none;
   border-radius: 5px;
-  padding: 5px 30px 5px 30px; /* Padding à esquerda para acomodar o ícone */
+  padding: 5px 30px 5px 30px;
+  /* Padding à esquerda para acomodar o ícone */
   cursor: pointer;
   font-size: 1rem;
 }
@@ -196,7 +197,7 @@ h1 {
   position: absolute;
   right: 0;
   background-color: #444;
-  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
   z-index: 1;
   border-radius: 5px;
 }
@@ -240,6 +241,7 @@ table {
   border-collapse: separate;
   margin: 20px 0;
   border-radius: 5px;
+  overflow-x: hidden;
 }
 
 table,
@@ -260,11 +262,11 @@ table tbody tr:hover {
 
 table td {
   padding: 10px;
-  border: 1px solid #ccc; 
-  background-color: #f9f9f9; 
+  border: 1px solid #ccc;
+  background-color: #f9f9f9;
 }
 
-table td + td {
+table td+td {
   border-left: none;
 }
 
@@ -337,8 +339,7 @@ tr:last-child td:last-child {
 }
 
 form.formtastic fieldset.inputs,
-form.formtastic fieldset.actions
- {
+form.formtastic fieldset.actions {
   border: none;
   padding: 0;
   margin: 0;
@@ -346,14 +347,15 @@ form.formtastic fieldset.actions
 }
 
 form.formtastic fieldset.inputs:before,
-form.formtastic fieldset.actions:before
- {
-  content: none; /* Isso remove o contador de tópicos */
+form.formtastic fieldset.actions:before {
+  content: none;
+  /* Isso remove o contador de tópicos */
 }
 
 /* Ajusta os inputs para terem um design mais limpo */
 form.formtastic .input {
-  margin-bottom: 20px; /* Espaçamento entre os campos */
+  margin-bottom: 20px;
+  /* Espaçamento entre os campos */
 }
 
 form.formtastic label {
@@ -447,7 +449,7 @@ form.formtastic ol {
   .navbar {
     flex-direction: column;
     align-items: flex-start;
-    width: calc(100% - 20px);
+    width: calc(100% - 40px);
   }
 
   .user-info {
