@@ -1,4 +1,17 @@
-<h1>Empresas</h1>
+<nav class="navbar">
+  <h1>Empresas</h1>
+  
+  <div class="user-info">
+    <span class="user-email">email_do_usuario@example.com</span>
+    <div class="custom-dropdown">
+    <button class="user-actions">&#9776; Menu</button>
+    <div class="dropdown-content">
+      <button id="new-user-modal" class="dropdown-link">Criar novo usuário</button>
+      <button id="logout-button" class="dropdown-link">Sair da Conta</button>
+    </div>
+  </div>  
+  </div>
+</nav>
 
 <!-- Botão que dispara o modal -->
 <button id="openCompanyModalBtn">Adicionar nova empresa</button>
@@ -29,10 +42,10 @@
   <thead>
     <tr>
       <th>ID</th>
-      <th>Name</th>
-      <th>Address</th>
+      <th>Nome</th>
+      <th>Endereço</th>
       <th>Logo</th>
-      <th>Actions</th>
+      <th>Equipamentos</th>
     </tr>
   </thead>
   <tbody>
@@ -45,13 +58,18 @@
           <% if company.logo.attached? %>
             <%= image_tag url_for(company.logo), alt: "#{company.name} Logo", width: 50 %>
           <% else %>
-            No Logo
+            Sem logo
           <% end %>
         </td>
-        <td><%= link_to "View Equipments", company_equipments_path(company) %></td>
+        <td><%= link_to "Ver equipamentos", company_equipments_path(company) %></td>
       </tr>
     <% end %>
   </tbody>
 </table>
 
 <%= will_paginate @companies %>
+
+<form id="logout_form" action="<%= destroy_user_session_path %>" method="post" style="display: none;">
+  <%= hidden_field_tag "_method", "delete" %>
+  <%= hidden_field_tag "authenticity_token", form_authenticity_token.to_s %>
+</form>

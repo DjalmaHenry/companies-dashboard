@@ -1,4 +1,17 @@
-<h1>Equipamentos de <%= @company.name %></h1>
+<nav class="navbar">
+  <h1>Equipamentos de <%= @company.name %></h1>
+  
+  <div class="user-info">
+    <span class="user-email">email_do_usuario@example.com</span>
+    <div class="custom-dropdown">
+    <button class="user-actions">&#9776; Menu</button>
+    <div class="dropdown-content">
+      <button id="new-user-modal" class="dropdown-link">Criar novo usuário</button>
+      <button id="logout-button" class="dropdown-link">Sair da Conta</button>
+    </div>
+  </div>  
+  </div>
+</nav>
 
 <!-- Botão que dispara o modal de equipamentos -->
 <button id="openEquipmentModalBtn">Adicionar novo equipamento</button>

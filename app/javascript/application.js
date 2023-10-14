@@ -4,7 +4,12 @@ import "controllers"
 document.addEventListener("turbo:load", function () {
   setupCompanyModal();
   setupEquipmentModal();
+
+  document.getElementById('logout-button').addEventListener('click', function () {
+    document.getElementById('logout_form').submit();
+  });
 });
+
 
 function setupCompanyModal() {
   var modal = document.getElementById("companyModal");
@@ -50,26 +55,24 @@ function setupEquipmentModal() {
   }
 }
 
-window.displayImagePreview = function(input) {
+window.displayImagePreview = function (input) {
   const file = input.files[0];
   if (file) {
-      const reader = new FileReader();
-      reader.onload = function(e) {
-          const logoInputWrapper = document.getElementById('company_logo_input');
-          let previewElement = logoInputWrapper.querySelector('#image-preview-element');
+    const reader = new FileReader();
+    reader.onload = function (e) {
+      const logoInputWrapper = document.getElementById('company_logo_input');
+      let previewElement = logoInputWrapper.querySelector('#image-preview-element');
 
-          if (!previewElement) {
-              previewElement = document.createElement('img');
-              previewElement.id = 'image-preview-element';
-              previewElement.classList.add('image-preview');
-              logoInputWrapper.appendChild(previewElement);
-          }
-
-          previewElement.src = e.target.result;
-          previewElement.style.display = 'block';
+      if (!previewElement) {
+        previewElement = document.createElement('img');
+        previewElement.id = 'image-preview-element';
+        previewElement.classList.add('image-preview');
+        logoInputWrapper.appendChild(previewElement);
       }
-      reader.readAsDataURL(file);
+
+      previewElement.src = e.target.result;
+      previewElement.style.display = 'block';
+    }
+    reader.readAsDataURL(file);
   }
 }
-
-
