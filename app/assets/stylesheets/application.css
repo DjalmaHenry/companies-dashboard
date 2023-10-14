@@ -162,7 +162,6 @@ h1 {
 
 .user-actions {
   appearance: none;
-  /* Remove o estilo padrão */
   -webkit-appearance: none;
   -moz-appearance: none;
   background-color: #444;
@@ -170,7 +169,6 @@ h1 {
   border: none;
   border-radius: 5px;
   padding: 5px 30px 5px 30px;
-  /* Padding à esquerda para acomodar o ícone */
   cursor: pointer;
   font-size: 1rem;
 }
@@ -234,6 +232,28 @@ button {
 
 button:hover {
   background-color: #555;
+}
+
+.actions-row {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.btn-action {
+  background-color: #707070;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 4px;
+  color: white;
+  text-decoration: none;
+  display: inline-block;
+  transition: background-color 0.3s;
+  width: 80px;
+}
+
+.btn-action:hover {
+  background-color: #ddd;
 }
 
 table {
@@ -349,13 +369,10 @@ form.formtastic fieldset.actions {
 form.formtastic fieldset.inputs:before,
 form.formtastic fieldset.actions:before {
   content: none;
-  /* Isso remove o contador de tópicos */
 }
 
-/* Ajusta os inputs para terem um design mais limpo */
 form.formtastic .input {
   margin-bottom: 20px;
-  /* Espaçamento entre os campos */
 }
 
 form.formtastic label {
@@ -443,6 +460,63 @@ form.formtastic ol {
 .date-picker-input:focus {
   border-color: #3498db;
   box-shadow: 0 1px 5px rgba(0, 0, 0, 0.1);
+}
+
+#new_user_form {
+  max-width: 400px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+#error_explanation {
+  background-color: #f8d7da;
+  border: 1px solid #f5c6cb;
+  padding: 15px;
+  border-radius: 5px;
+  margin-bottom: 20px;
+  color: #721c24;
+}
+
+#error_explanation h2 {
+  font-size: 18px;
+  margin-bottom: 10px;
+}
+
+#error_explanation ul {
+  padding-left: 20px;
+}
+
+#new_user_form div {
+  margin-bottom: 10px;
+}
+
+#new_user_form label {
+  display: inline-flex;
+  margin-bottom: 10px;
+  font-weight: bold;
+}
+
+#new_user_form input[type="email"],
+#new_user_form input[type="password"],
+#new_user_form input[type="submit"] {
+  width: calc(100% - 20px);
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  font-size: 16px;
+}
+
+#new_user_form input[type="submit"] {
+  width: 100% !important;
+  margin-top: 10px;
+  background-color: #007BFF;
+  color: white;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+#new_user_form input[type="submit"]:hover {
+  background-color: #0056b3;
 }
 
 @media screen and (max-width: 768px) {

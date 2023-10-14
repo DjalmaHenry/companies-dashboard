@@ -4,7 +4,7 @@
 <!-- Barra de Navegacao -->
 <nav class="navbar">
   <h1>Equipamentos de <%= @company.name %></h1>
-  
+
   <div class="user-info">
     <% if user_signed_in? %> <!-- Verifica se um usuário está logado -->
       <span class="user-email"><%= current_user.email %></span>
@@ -39,30 +39,32 @@
       <% end %>
 
       <div>
-        <%= f.label :email %><br />
+        <%= f.label :email, "E-mail" %><br />
         <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
       </div>
-    
+  
       <div>
-        <%= f.label :password %><br />
+        <%= f.label :password, "Senha" %><br />
         <%= f.password_field :password, autocomplete: "new-password" %>
       </div>
-    
+  
       <div>
-        <%= f.label :password_confirmation %><br />
+        <%= f.label :password_confirmation, "Confirme sua senha" %><br />
         <%= f.password_field :password_confirmation, autocomplete: "new-password" %>
-      </div>
+      </div>  
     
       <div>
-        <%= f.submit "Sign up" %>
+        <%= f.submit "Cadastrar usuário" %>
       </div>
 
     <% end %>
   </div>
 </div>
 
-<!-- Botão que dispara o modal de equipamentos -->
-<button id="openEquipmentModalBtn">Adicionar novo equipamento</button>
+<div class="actions-row">
+    <%= link_to "← Voltar", :back, class: "btn-action btn-back" %>
+    <button id="openEquipmentModalBtn">Adicionar novo equipamento</button>
+</div>
 
 <!-- Estrutura do modal de equipamentos -->
     <div id="equipmentModal" class="modal">

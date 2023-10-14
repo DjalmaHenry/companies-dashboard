@@ -40,22 +40,22 @@
       <% end %>
 
       <div>
-        <%= f.label :email %><br />
+        <%= f.label :email, "E-mail" %><br />
         <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
       </div>
-    
+  
       <div>
-        <%= f.label :password %><br />
+        <%= f.label :password, "Senha" %><br />
         <%= f.password_field :password, autocomplete: "new-password" %>
       </div>
-    
+  
       <div>
-        <%= f.label :password_confirmation %><br />
+        <%= f.label :password_confirmation, "Confirme sua senha" %><br />
         <%= f.password_field :password_confirmation, autocomplete: "new-password" %>
-      </div>
+      </div>  
     
       <div>
-        <%= f.submit "Sign up" %>
+        <%= f.submit "Criar usuário" %>
       </div>
 
     <% end %>
