@@ -50,3 +50,26 @@ function setupEquipmentModal() {
   }
 }
 
+window.displayImagePreview = function(input) {
+  const file = input.files[0];
+  if (file) {
+      const reader = new FileReader();
+      reader.onload = function(e) {
+          const logoInputWrapper = document.getElementById('company_logo_input');
+          let previewElement = logoInputWrapper.querySelector('#image-preview-element');
+
+          if (!previewElement) {
+              previewElement = document.createElement('img');
+              previewElement.id = 'image-preview-element';
+              previewElement.classList.add('image-preview');
+              logoInputWrapper.appendChild(previewElement);
+          }
+
+          previewElement.src = e.target.result;
+          previewElement.style.display = 'block';
+      }
+      reader.readAsDataURL(file);
+  }
+}
+
+

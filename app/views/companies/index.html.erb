@@ -4,14 +4,19 @@
 <button id="openCompanyModalBtn">Adicionar nova empresa</button>
 
 <!-- Estrutura do modal -->
-<div id="companyModal" class="modal">
+  <div id="companyModal" class="modal">
   <div class="modal-content">
     <span id="closeCompanyModalBtn" class="closeBtn">&times;</span>
     <%= semantic_form_for @company, html: { multipart: true } do |f| %>
         <%= f.inputs do %>
           <%= f.input :name %>
           <%= f.input :address %>
-          <%= f.input :logo, as: :file %>
+          <div class="file-upload-wrapper">
+          <label for="company_logo" class="file-upload-label">Upload Logo</label>
+          <%= f.input :logo, as: :file, label: false, input_html: { id: 'company_logo', class: 'file-upload-input', onchange: 'window.displayImagePreview(this)' } %>
+          <img id="image-preview-element" class="image-preview" />
+        </div>
+        
         <% end %>
         <%= f.actions do %>
           <%= f.action :submit, as: :button, label: "Create Company" %>

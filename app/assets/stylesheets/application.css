@@ -328,3 +328,39 @@ form.formtastic ol {
   padding: 0;
   margin: 0;
 }
+
+/* Estilização do input de arquivo */
+.file-upload-wrapper {
+  position: relative;
+  width: auto; /* Ajuste para ficar do tamanho de um botão */
+}
+
+.file-upload-input {
+  display: none; /* Oculta o input padrão */
+}
+
+.file-upload-label {
+  padding: 8px 16px; /* Padding reduzido para um look mais "compacto" */
+  width: auto;
+  border: none;
+  border-radius: 5px;
+  display: inline-block; /* Fica na mesma linha do texto ao redor */
+  cursor: pointer;
+  transition: background-color 0.2s;
+  background-color: #4CAF50; /* Verde */
+  color: #ffffff;
+  font-weight: 300; /* Fonte fina */
+}
+
+.file-upload-label:hover {
+  background-color: #45a049; /* Um verde um pouco mais escuro no hover */
+}
+
+/* Estilo para a imagem de pré-visualização */
+.image-preview {
+  width: 100%;
+  max-width: 200px;
+  border-radius: 5px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+  display: none; /* Por padrão, ele não é exibido */
+}
