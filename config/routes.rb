@@ -1,9 +1,13 @@
 Rails.application.routes.draw do
-  root 'companies#index'
-  
+  root "companies#index"
+
   devise_for :users
 
   resources :companies
+
+  resources :companies do
+    resources :equipments
+  end
 
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
 

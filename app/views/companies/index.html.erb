@@ -28,6 +28,7 @@
       <th>Name</th>
       <th>Address</th>
       <th>Logo</th>
+      <th>Actions</th>
     </tr>
   </thead>
   <tbody>
@@ -43,6 +44,7 @@
             No Logo
           <% end %>
         </td>
+        <td><%= link_to "View Equipments", company_equipments_path(company) %></td>
       </tr>
     <% end %>
   </tbody>

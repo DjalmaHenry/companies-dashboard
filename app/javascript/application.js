@@ -1,33 +1,52 @@
-// Configure your import map in config/importmap.rb. Read more: https://github.com/rails/importmap-rails
 import "@hotwired/turbo-rails"
 import "controllers"
 
+document.addEventListener("turbo:load", function () {
+  setupCompanyModal();
+  setupEquipmentModal();
+});
 
-document.addEventListener("DOMContentLoaded", function() {
-    // Pega o modal
-    var modal = document.getElementById("simpleModal");
-  
-    // Pega o botão que abre o modal
-    var modalBtn = document.getElementById("openModalBtn");
-  
-    // Pega o elemento <span> que fecha o modal
-    var closeBtn = document.getElementById("closeModalBtn");
-  
-    // Evento para abrir o modal
-    modalBtn.onclick = function() {
+function setupCompanyModal() {
+  var modal = document.getElementById("simpleModal");
+  var modalBtn = document.getElementById("openModalBtn");
+  var closeBtn = document.getElementById("closeModalBtn");
+
+  if (modal && modalBtn && closeBtn) {
+    modalBtn.onclick = function () {
       modal.style.display = "block";
     }
-  
-    // Evento para fechar o modal
-    closeBtn.onclick = function() {
+
+    closeBtn.onclick = function () {
       modal.style.display = "none";
     }
-  
-    // Evento para fechar o modal se clicar fora dele
-    window.onclick = function(event) {
+
+    window.onclick = function (event) {
       if (event.target == modal) {
         modal.style.display = "none";
       }
     }
-  });
-  
+  }
+}
+
+function setupEquipmentModal() {
+  var equipmentModal = document.getElementById("equipmentModal");
+  var equipmentModalBtn = document.getElementById("openEquipmentModalBtn");
+  var closeEquipmentModalBtn = document.getElementById("closeEquipmentModalBtn");
+
+  if (equipmentModal && equipmentModalBtn && closeEquipmentModalBtn) {
+    equipmentModalBtn.onclick = function () {
+      equipmentModal.style.display = "block";
+    }
+
+    closeEquipmentModalBtn.onclick = function () {
+      equipmentModal.style.display = "none";
+    }
+
+    window.onclick = function (event) {
+      if (event.target == equipmentModal) {
+        equipmentModal.style.display = "none";
+      }
+    }
+  }
+}
+

@@ -10,10 +10,11 @@ class CompaniesController < ApplicationController
 
   def create
     @company = Company.new(company_params)
+
     if @company.save
-      redirect_to companies_path, notice: "Company was successfully created."
+      render json: { success: true, company: @company.as_json(only: [:id, :name, :address]) }
     else
-      render :new
+      render json: { success: false, errors: @company.errors.full_messages }, status: 400
     end
   end
 
@@ -21,5 +22,5 @@ class CompaniesController < ApplicationController
 
   def company_params
     params.require(:company).permit(:name, :address, :logo)
-  end  
+  end
 end

@@ -1,0 +1,48 @@
+<h2>Equipments for <%= @company.name %></h2>
+
+<!-- Botão que dispara o modal de equipamentos -->
+<button id="openEquipmentModalBtn">Add Equipment</button>
+
+<!-- Estrutura do modal de equipamentos -->
+    <div id="equipmentModal" class="modal">
+      <div class="modal-content">
+        <span id="closeEquipmentModalBtn" class="closeBtn">&times;</span>
+        <%= semantic_form_for [@company, Equipment.new], url: company_equipments_path(@company) do |f| %>
+            <%= f.inputs do %>
+              <%= f.input :name %>
+              <%= f.input :serial_number %>
+              <%= f.input :acquisition_date, as: :date_picker %>
+              <%= f.input :responsible_user %>
+            <% end %>
+            <%= f.actions do %>
+              <%= f.action :submit, as: :button, label: "Create Equipment" %>
+            <% end %>
+        <% end %>
+      </div>
+    </div>
+    
+
+<table border="1">
+  <thead>
+    <tr>
+      <th>ID</th>
+      <th>Name</th>
+      <th>Serial Number</th>
+      <th>Acquisition Date</th>
+      <th>Responsible User</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @equipments.each do |equip| %>
+      <tr>
+        <td><%= equip.id %></td>
+        <td><%= equip.name %></td>
+        <td><%= equip.serial_number %></td>
+        <td><%= equip.acquisition_date %></td>
+        <td><%= equip.responsible_user %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<%= will_paginate @equipments %>
