@@ -1,7 +1,7 @@
 Rails.application.routes.draw do
   root "companies#index"
 
-  devise_for :users
+  devise_for :users, skip: [:registrations]
 
   resources :companies
 
