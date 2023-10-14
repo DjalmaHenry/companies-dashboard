@@ -9,10 +9,10 @@
         <span id="closeEquipmentModalBtn" class="closeBtn">&times;</span>
         <%= semantic_form_for [@company, Equipment.new], url: company_equipments_path(@company) do |f| %>
             <%= f.inputs do %>
-              <%= f.input :name %>
-              <%= f.input :serial_number %>
-              <%= f.input :acquisition_date, as: :date_picker %>
-              <%= f.input :responsible_user %>
+                <%= f.input :name, label: "Nome" %>
+                <%= f.input :serial_number, label: "Serial" %>
+                <%= f.input :acquisition_date, as: :date_picker, input_html: { class: "date-picker-input" }, label: "Data de aquisição" %>
+                <%= f.input :responsible_user, label: "Pessoa responsável" %>                
             <% end %>
             <%= f.actions do %>
               <%= f.action :submit, as: :button, label: "Create Equipment" %>

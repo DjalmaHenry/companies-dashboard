@@ -172,23 +172,21 @@ td {
 }
 
 table tbody tr {
-  transition: transform 0.3s; /* Suaviza a animação de transformação */
+  transition: transform 0.3s;
 }
 
 table tbody tr:hover {
-  transform: scale(1.05); /* Aumenta o tamanho da linha em 5% */
-  z-index: 1; /* Faz com que a linha em hover fique acima das outras */
-  box-shadow: 0 0 15px rgba(0, 0, 0, 0.2); /* Adiciona uma sombra para dar mais destaque à linha em hover */
+  transform: scale(1.05);
+  z-index: 1;
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
 }
 
-/* Estilos para as células da tabela */
 table td {
   padding: 10px;
   border: 1px solid #ccc; 
   background-color: #f9f9f9; 
 }
 
-/* Se você não quiser o efeito de borda entre as células, pode usar o seguinte: */
 table td + td {
   border-left: none;
 }
@@ -210,25 +208,20 @@ tr:nth-child(even) {
 
 th:first-child {
   border-top-left-radius: 10px;
-  /* Arredondamento superior esquerdo do cabeçalho */
 }
 
 th:last-child {
   border-top-right-radius: 10px;
-  /* Arredondamento superior direito do cabeçalho */
 }
 
 tr:last-child td:first-child {
   border-bottom-left-radius: 10px;
-  /* Arredondamento inferior esquerdo da última linha */
 }
 
 tr:last-child td:last-child {
   border-bottom-right-radius: 10px;
-  /* Arredondamento inferior direito da última linha */
 }
 
-/* Estilo base para o contêiner da paginação */
 .pagination {
   display: flex;
   justify-content: center;
@@ -236,7 +229,6 @@ tr:last-child td:last-child {
   margin-top: 20px;
 }
 
-/* Estilo para os links de paginação */
 .pagination a,
 .pagination span {
   color: #555;
@@ -248,21 +240,17 @@ tr:last-child td:last-child {
   transition: background-color 0.3s, color 0.3s, box-shadow 0.2s;
 }
 
-/* Efeito de elevação ao passar o mouse para dar profundidade */
 .pagination a:hover {
   background-color: #f7f7f7;
   box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
 }
 
-/* Estilo para a página atual */
 .pagination .current {
   background-color: #007BFF;
   color: #ffffff;
   padding: 8px 16px;
-  /* Assegurando que o espaçamento seja o mesmo das outras opções */
   border: 1px solid #007BFF;
   border-radius: 15px;
-  /* Garantindo o arredondamento correto */
   box-shadow: none;
 }
 
@@ -271,7 +259,6 @@ tr:last-child td:last-child {
   border: 1px solid #eee;
 }
 
-/* Remove a borda do fieldset e o contador de tópicos */
 form.formtastic fieldset.inputs,
 form.formtastic fieldset.actions
  {
@@ -322,45 +309,59 @@ form.formtastic select:focus {
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1) inset;
 }
 
-/* Para remover as listas ordenadas que envolvem os campos */
 form.formtastic ol {
   list-style-type: none;
   padding: 0;
   margin: 0;
 }
 
-/* Estilização do input de arquivo */
 .file-upload-wrapper {
   position: relative;
-  width: auto; /* Ajuste para ficar do tamanho de um botão */
+  width: auto;
 }
 
 .file-upload-input {
-  display: none; /* Oculta o input padrão */
+  display: none;
 }
 
 .file-upload-label {
-  padding: 8px 16px; /* Padding reduzido para um look mais "compacto" */
+  padding: 8px 16px;
   width: auto;
   border: none;
   border-radius: 5px;
-  display: inline-block; /* Fica na mesma linha do texto ao redor */
+  display: inline-block;
   cursor: pointer;
   transition: background-color 0.2s;
-  background-color: #4CAF50; /* Verde */
+  background-color: #4CAF50;
   color: #ffffff;
-  font-weight: 300; /* Fonte fina */
+  font-weight: 300;
 }
 
 .file-upload-label:hover {
-  background-color: #45a049; /* Um verde um pouco mais escuro no hover */
+  background-color: #45a049;
 }
 
-/* Estilo para a imagem de pré-visualização */
 .image-preview {
   width: 100%;
   max-width: 200px;
   border-radius: 5px;
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
-  display: none; /* Por padrão, ele não é exibido */
+  display: none;
+}
+
+.date-picker-input {
+  width: calc(100% - 1rem);
+  padding: 8px 12px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  font-size: 14px;
+  background-color: #f9f9f9;
+  transition: border-color 0.3s, box-shadow 0.3s;
+  outline: none;
+  box-sizing: border-box;
+}
+
+.date-picker-input:focus {
+  border-color: #3498db;
+  box-shadow: 0 1px 5px rgba(0, 0, 0, 0.1);
 }
