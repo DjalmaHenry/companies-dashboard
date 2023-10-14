@@ -4,18 +4,43 @@
 
     <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
       <div class="field">
-        <%= f.label :email, class: 'label' %>
-        <%= f.email_field :email, autofocus: true, autocomplete: "email", class: 'input' %>
+        <%= f.label :email, class: "label" %>
+        <%= f.email_field :email, autofocus: true, autocomplete: "email", class: "input" %>
       </div>
 
       <div class="field">
-        <%= f.label :senha, class: 'label' %>
-        <%= f.password_field :password, autocomplete: "current-password", class: 'input' %>
+        <%= f.label :senha, class: "label" %>
+        <%= f.password_field :password, autocomplete: "current-password", class: "input" %>
       </div>
 
       <div class="actions">
-        <%= f.submit "Entrar", class: 'submit-btn' %>
+        <%= f.submit "Entrar", class: "submit-btn" %>
       </div>
     <% end %>
   </div>
+
+  <div id="toast" class="toast">
+    <p class="toast-message"></p>
+  </div>
 </div>
+
+<% if flash[:alert] %>
+<script>
+    function showToastDirect(message) {
+      const toast = document.getElementById("toast");
+      const toastMessage = document.querySelector(".toast-message");
+      
+      toastMessage.textContent = message;
+      toast.classList.add("show");
+
+      setTimeout(() => {
+          toast.classList.remove("show");
+      }, 3000);
+    }
+    
+    showToastDirect("<%= j flash[:alert] %>");
+</script>
+<% end %>
+
+
+
