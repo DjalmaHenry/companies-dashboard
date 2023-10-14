@@ -1,12 +1,12 @@
-<h1>Companies</h1>
+<h1>Empresas</h1>
 
 <!-- Botão que dispara o modal -->
-<button id="openModalBtn">Open Modal</button>
+<button id="openCompanyModalBtn">Adicionar nova empresa</button>
 
 <!-- Estrutura do modal -->
-<div id="simpleModal" class="modal">
+<div id="companyModal" class="modal">
   <div class="modal-content">
-    <span id="closeModalBtn" class="closeBtn">&times;</span>
+    <span id="closeCompanyModalBtn" class="closeBtn">&times;</span>
     <%= semantic_form_for @company, html: { multipart: true } do |f| %>
         <%= f.inputs do %>
           <%= f.input :name %>

@@ -7,9 +7,9 @@ document.addEventListener("turbo:load", function () {
 });
 
 function setupCompanyModal() {
-  var modal = document.getElementById("simpleModal");
-  var modalBtn = document.getElementById("openModalBtn");
-  var closeBtn = document.getElementById("closeModalBtn");
+  var modal = document.getElementById("companyModal");
+  var modalBtn = document.getElementById("openCompanyModalBtn");
+  var closeBtn = document.getElementById("closeCompanyModalBtn");
 
   if (modal && modalBtn && closeBtn) {
     modalBtn.onclick = function () {

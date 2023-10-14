@@ -1,20 +1,8 @@
 /*
- * This is a manifest file that'll be compiled into application.css, which will include all the files
- * listed below.
- *
- * Any CSS (and SCSS, if configured) file within this directory, lib/assets/stylesheets, or any plugin's
- * vendor/assets/stylesheets directory can be referenced here using a relative path.
- *
- * You're free to add application-wide styles to this file and they'll appear at the bottom of the
- * compiled file so the styles you add here take precedence over styles defined in any other CSS
- * files in this directory. Styles in this file should be added after the last require_* statement.
- * It is generally better to create a new file per style scope.
- *
  *= require_tree .
  *= require_self
  */
 
-/* add default font to all app */
 @import url('https://fonts.googleapis.com/css?family=Roboto:400,500,700&display=swap');
 
 * {
@@ -22,10 +10,8 @@
 }
 
 
-/* Estilo do Modal */
 .modal {
   display: none;
-  /* Inicialmente escondido */
   position: fixed;
   z-index: 1;
   left: 0;
@@ -42,6 +28,7 @@
   padding: 20px;
   border: 1px solid #888;
   width: 70%;
+  border-radius: 10px;
 }
 
 .closeBtn {
@@ -140,4 +127,140 @@
   visibility: visible;
   opacity: 1;
   transition: opacity 0.3s linear;
+}
+
+h1 {
+  background-color: #333;
+  color: #fff;
+  padding: 20px;
+  margin: 0;
+  border-radius: 10px;
+}
+
+button {
+  padding: 10px 20px;
+  cursor: pointer;
+  margin: 10px 0;
+  border: none;
+  background-color: #333;
+  color: #fff;
+  border-radius: 5px;
+  transition: background-color 0.3s;
+}
+
+button:hover {
+  background-color: #555;
+}
+
+table {
+  width: 100%;
+  border-collapse: separate;
+  margin: 20px 0;
+  border-radius: 5px;
+}
+
+table,
+th,
+td {
+  border: 1px solid #ddd;
+}
+
+table tbody tr {
+  transition: transform 0.3s; /* Suaviza a animação de transformação */
+}
+
+table tbody tr:hover {
+  transform: scale(1.05); /* Aumenta o tamanho da linha em 5% */
+  z-index: 1; /* Faz com que a linha em hover fique acima das outras */
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.2); /* Adiciona uma sombra para dar mais destaque à linha em hover */
+}
+
+/* Estilos para as células da tabela */
+table td {
+  padding: 10px;
+  border: 1px solid #ccc; 
+  background-color: #f9f9f9; 
+}
+
+/* Se você não quiser o efeito de borda entre as células, pode usar o seguinte: */
+table td + td {
+  border-left: none;
+}
+
+th,
+td {
+  padding: 10px;
+  text-align: left;
+}
+
+th {
+  background-color: #333;
+  color: #fff;
+}
+
+tr:nth-child(even) {
+  background-color: #f2f2f2;
+}
+
+th:first-child {
+  border-top-left-radius: 10px;
+  /* Arredondamento superior esquerdo do cabeçalho */
+}
+
+th:last-child {
+  border-top-right-radius: 10px;
+  /* Arredondamento superior direito do cabeçalho */
+}
+
+tr:last-child td:first-child {
+  border-bottom-left-radius: 10px;
+  /* Arredondamento inferior esquerdo da última linha */
+}
+
+tr:last-child td:last-child {
+  border-bottom-right-radius: 10px;
+  /* Arredondamento inferior direito da última linha */
+}
+
+/* Estilo base para o contêiner da paginação */
+.pagination {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 20px;
+}
+
+/* Estilo para os links de paginação */
+.pagination a,
+.pagination span {
+  color: #555;
+  padding: 8px 16px;
+  margin: 0 5px;
+  text-decoration: none;
+  border: 1px solid #ddd;
+  border-radius: 15px;
+  transition: background-color 0.3s, color 0.3s, box-shadow 0.2s;
+}
+
+/* Efeito de elevação ao passar o mouse para dar profundidade */
+.pagination a:hover {
+  background-color: #f7f7f7;
+  box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+/* Estilo para a página atual */
+.pagination .current {
+  background-color: #007BFF;
+  color: #ffffff;
+  padding: 8px 16px;
+  /* Assegurando que o espaçamento seja o mesmo das outras opções */
+  border: 1px solid #007BFF;
+  border-radius: 15px;
+  /* Garantindo o arredondamento correto */
+  box-shadow: none;
+}
+
+.pagination .disabled {
+  color: #ccc;
+  border: 1px solid #eee;
 }
