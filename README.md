@@ -6,17 +6,15 @@ O **Companies Dashboard** é um projeto desenvolvido em Ruby on Rails focado na 
   <img src="IMAGEM_MINIATURA_DO_VIDEO" alt="Vídeo de Demonstração" />
 </a>
 
-![Área para inserir print1](LINK_DO_PRINT1)
-![Área para inserir print2](LINK_DO_PRINT2)
 <img width="1440" alt="Screenshot 2023-10-14 at 19 45 18" src="https://github.com/DjalmaHenry/companies-dashboard/assets/45500812/b3c8c2b5-aa95-4c2b-b220-7616c57452b3">
 <img width="1440" alt="Screenshot 2023-10-14 at 19 40 51" src="https://github.com/DjalmaHenry/companies-dashboard/assets/45500812/88bf5503-c6e2-40a7-9503-fee29c5798a6">
 <img width="1440" alt="Screenshot 2023-10-14 at 19 43 34" src="https://github.com/DjalmaHenry/companies-dashboard/assets/45500812/d8763e53-e80e-4135-baf0-f9ea8066f207">
 <img width="1440" alt="Screenshot 2023-10-14 at 19 43 59" src="https://github.com/DjalmaHenry/companies-dashboard/assets/45500812/207246b4-d7a5-4a50-9090-65d33302e412">
 <img width="1440" alt="Screenshot 2023-10-14 at 19 44 11" src="https://github.com/DjalmaHenry/companies-dashboard/assets/45500812/576da6da-56b5-4ef9-b943-07bc450178df">
 <img width="1440" alt="Screenshot 2023-10-14 at 19 44 55" src="https://github.com/DjalmaHenry/companies-dashboard/assets/45500812/e5da4866-bfd4-474e-a589-04eaece90705">
-<img width="311" alt="Screenshot 2023-10-14 at 19 41 04" src="https://github.com/DjalmaHenry/companies-dashboard/assets/45500812/25a23638-a63e-45a4-8263-802325d1f878">
 <img width="318" alt="Screenshot 2023-10-14 at 19 51 04" src="https://github.com/DjalmaHenry/companies-dashboard/assets/45500812/5da69d08-2831-499b-82ca-b617d2b432e7">
 <img width="322" alt=" " src="https://github.com/DjalmaHenry/companies-dashboard/assets/45500812/50ee70f4-2b3e-4321-83f0-bffccb0e9e87">
+<img width="311" alt="Screenshot 2023-10-14 at 19 41 04" src="https://github.com/DjalmaHenry/companies-dashboard/assets/45500812/25a23638-a63e-45a4-8263-802325d1f878">
 
 
 ## Recursos
