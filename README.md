@@ -2,9 +2,7 @@
 
 O **Companies Dashboard** é um projeto desenvolvido em Ruby on Rails focado na gestão de empresas, permitindo o gerenciamento de empresas e seus equipamentos associados.
 
-<a href="LINK_DO_VIDEO">
-  <img src="IMAGEM_MINIATURA_DO_VIDEO" alt="Vídeo de Demonstração" />
-</a>
+### [Assista ao vídeo de demonstração do projeto aqui](https://youtu.be/Ki87koVjsYA?si=8e0iZEfwMXqtl68l).
 
 <img width="1440" alt="Screenshot 2023-10-14 at 19 45 18" src="https://github.com/DjalmaHenry/companies-dashboard/assets/45500812/b3c8c2b5-aa95-4c2b-b220-7616c57452b3">
 <img width="1440" alt="Screenshot 2023-10-14 at 19 40 51" src="https://github.com/DjalmaHenry/companies-dashboard/assets/45500812/88bf5503-c6e2-40a7-9503-fee29c5798a6">
