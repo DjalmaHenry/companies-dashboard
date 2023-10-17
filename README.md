@@ -38,6 +38,10 @@ O **Companies Dashboard** é um projeto desenvolvido em Ruby on Rails focado na 
 A aplicação foi hospedada no Fly.io. Você pode acessá-la através do link:
 [https://companiesdashboard.fly.dev/](https://companiesdashboard.fly.dev/)
 
+Conta de teste:
+   - **Login**: user@email.com
+   - **Senha**: 123456a
+
 ## Rodando localmente
 
 Para rodar o projeto localmente, siga os seguintes passos:
